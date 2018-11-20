@@ -40,7 +40,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	mv "ServerlessAI-Workshop/SageMaker Batch Transform/lambda_function.py" "ServerlessAI-Workshop/SageMaker Batch Transform/LambdaPackage/lambda_function.py" 
 	
 	chown -R ec2-user.ec2-user ServerlessAI-Workshop/
-	rm -rf ServerlessAI
+	rm -rf serverless-ai-workshop
 	```
 
 	The above commands do the following when the instance is created:
