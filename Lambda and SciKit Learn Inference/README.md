@@ -30,8 +30,8 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	git clone https://github.com/aws-samples/serverless-ai-workshop.git
 	
 	mkdir ServerlessAI-Workshop
-	mv "ServerlessAI/Lambda and SciKit Learn Inference" ServerlessAI-Workshop/
-	mv "ServerlessAI/SageMaker Batch Transform" ServerlessAI-Workshop/
+	mv "serverless-ai-workshop/Lambda and SciKit Learn Inference" ServerlessAI-Workshop/
+	mv "serverless-ai-workshop/SageMaker Batch Transform" ServerlessAI-Workshop/
 	mkdir "ServerlessAI-Workshop/Lambda and SciKit Learn Inference/LambdaPackage"
 	mkdir "ServerlessAI-Workshop/SageMaker Batch Transform/LambdaPackage"
 	mv "ServerlessAI-Workshop/Lambda and SciKit Learn Inference/lambda_function.py" "ServerlessAI-Workshop/Lambda and SciKit Learn Inference/LambdaPackage/lambda_function.py" 
