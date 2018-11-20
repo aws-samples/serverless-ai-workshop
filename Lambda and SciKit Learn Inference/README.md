@@ -27,7 +27,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	```
 	
 	cd SageMaker
-	git clone https://github.com/skrinak/ServerlessAI.git
+	git clone https://github.com/aws-samples/serverless-ai-workshop.git
 	
 	mkdir ServerlessAI-Workshop
 	mv "ServerlessAI/Lambda and SciKit Learn Inference" ServerlessAI-Workshop/
