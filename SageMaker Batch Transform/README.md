@@ -23,7 +23,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 1. After the model has been trained, create Lambda deployment package on the notebook instance by running the following commands in SageMaker's terminal.
 	```
 	cd to LambdaPackage
-	sudo pip install --ignore-installed --target=. sklearn
+	sudo pip install --ignore-installed --target=. sagemaker
 	find . -name "*.so" | xargs strip
 	7z a -mm=Deflate -mfb=258 -mpass=15 -r ../ServerlessAI_BatchTransform.zip *	
 	```
@@ -37,7 +37,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 1. Create a Lambda function using the deployment package stored in your S3 bucket. Add ```AmazonSageMakerFullAccess``` policy to the execution role, ```Lambda_ServerlessWorkshop_Role```. 
  
 	```
-	aws lambda create-function --function-name ServerlessAI_BatchTransform --runtime python3.6 --role  arn:aws:iam::<your-aws-account>:role/Lambda_ServerlessWorkshop_Role --handler lambda_function.lambda_handler --memory-size 128 --timeout 300 --code S3Bucket=<your-bucket-name>,S3Key="ServerlessAIWorkshop/BatchTransform/ServerlessAI_BatchTransform.zip" 
+	aws lambda create-function --function-name ServerlessAI_BatchTransform --runtime python3.6 --role  arn:aws:iam::<your-aws-account>:role/<lambda-execution-role-name> --handler lambda_function.lambda_handler --memory-size 128 --timeout 300 --code S3Bucket=<your-bucket-name>,S3Key="ServerlessAIWorkshop/BatchTransform/ServerlessAI_BatchTransform.zip" 
 	```
 
 	If you need to update the code, use the following command:
