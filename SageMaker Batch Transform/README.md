@@ -25,7 +25,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	cd to LambdaPackage
 	sudo pip install --ignore-installed --target=. sklearn
 	find . -name "*.so" | xargs strip
-	7z a -mm=Deflate -mfb=258 -mpass=15 -r ../ServerlessAI_BatchTransform.zip.zip *	
+	7z a -mm=Deflate -mfb=258 -mpass=15 -r ../ServerlessAI_BatchTransform.zip *	
 	```
 
 1. Upload the deployment package to your S3 bucket by running the following command:
