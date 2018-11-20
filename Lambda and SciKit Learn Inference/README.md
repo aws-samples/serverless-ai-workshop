@@ -25,6 +25,8 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	Click on the orange button labelled "Create Configuration". Under "Scripts" click on "Create notebook". Name the lifecycle configuration ```serverless-ai-workshop-lc```. Place your cursor on the line under the initial bash commands and paste the following: 
 
 	```
+	#!/bin/bash
+	set -e
 	
 	cd SageMaker
 	git clone https://github.com/aws-samples/serverless-ai-workshop.git
