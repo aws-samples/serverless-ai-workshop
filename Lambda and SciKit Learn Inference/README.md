@@ -127,7 +127,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 1. Create a Lambda function using the deployment package stored in your S3 bucket. The required Lambda role was created earlier when we were waiting for our SageMaker instance to provision. You'll need the full Amazon Resource Name ("apn") to run the following command. You can find it by returning to IAM, searching for the role by name and clicking on it for full information. 
  
 	```
-	aws lambda create-function --function-name SentimentAnalysis_Sklearn --runtime python3.6 --role  arn:aws:iam::<your-aws-account>:role/<your-bucket-name> --handler lambda_function.lambda_handler --memory-size 512 --timeout 60 --environment Variables={JOBLIB_MULTIPROCESSING=0} --code S3Bucket="<your-bucket-name>",S3Key="ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip" 
+	aws lambda create-function --function-name SentimentAnalysis_Sklearn --runtime python3.6 --role  arn:aws:iam::<your-aws-account>:role/<lambda-execution-role-name> --handler lambda_function.lambda_handler --memory-size 512 --timeout 60 --environment Variables={JOBLIB_MULTIPROCESSING=0} --code S3Bucket="<your-bucket-name>",S3Key="ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip" 
 	```
 	If you need to update the code, use the following command:
 	
