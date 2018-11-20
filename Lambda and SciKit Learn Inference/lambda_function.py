@@ -49,6 +49,8 @@ def lambda_handler(event, context):
 	
 	print("Accuracy from the validation dataset: %.2f%%" % (accuracy * 100.0))
 	
+	print("Prediction for the first test tweet is " + model.predict([X_test[0]])[0])
+	
 	return {
         "statusCode": 200,
         "body": json.dumps('Hello from Lambda!')
