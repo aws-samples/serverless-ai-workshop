@@ -54,7 +54,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	
 	- Take note of the region in which you are running SageMaker. You'll need to recall this region when you create an S3 bucket in the next step. 
 	- Name the instance as ```serverless-ai-workshop```. 
-	- Choose instance type such as ```ml.m4.4xlarge```. The "m" family is memory-optimized and "t" family is our least expensive general purpose instance class. 
+	- Choose instance type such as ```ml.c5.4xlarge```. The "c" family is compute optimized and "t" family is our least expensive general purpose instance class. 
 	- Under IAM role choose "Create a new role"
 		- Choose "Any S3 bucket" 
 		- Click "Create role" and take note of the newly created role. 
@@ -142,7 +142,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 	```
 	{
-	  "bucket_name": "<your-bcuket-name>" 
+	  "bucket_name": "<your-bucket-name>" 
 	}
 	```
 	
