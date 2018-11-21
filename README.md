@@ -1,9 +1,9 @@
 # ServerlessAI
 
 ## Run machine learning inference serverless with AWS Lambda and SageMaker 
-This workshop demonstrates two methods of machine learning inference for globally-scalable production using AWS Lambda and Amazon SageMaker. **Scikit-learn** is a popular machine learning library that covers most aspects of shallow learning. With these techniques the library module and your custom inference code can be combined into a flexible package for instantaneous execution in the cloud. 
+This workshop demonstrates two methods of machine learning inference for globally-scalable production using AWS Lambda and Amazon SageMaker. **[Scikit-learn](https://scikit-learn.org)** is a popular machine learning library that covers most aspects of shallow learning. With these techniques the library module and your custom inference code can be combined into a flexible package for instantaneous cloud deployment. 
 
-Though scikit-learn is vast and deep, it can't do everything. Importantly, it can't call inference on deep learning models, importantly those created with MXNet, TensorFlow, or pytorch. **Amazon SageMaker** is ideally suited to build and deploy models with those frameworks. The SageMaker feature **batch-transform** is demonstrated calling inference in the cloud on-demand. As such it can handle nearly every inference workload without the need for a costly persistent endpoint. 
+Scikit-learn is vast and deep. It's an essential tool for every data scientist's workbench. However, it can't do everything. Importantly, it can't call inference on deep learning models, importantly those created with MXNet, TensorFlow, or pytorch. **Amazon SageMaker** is ideally suited to build and deploy models with those frameworks. The SageMaker feature **batch-transform** is demonstrated calling inference in the cloud on-demand. As such it can handle nearly every inference workload without the need for a costly persistent endpoint. 
 
 ### What is AI? 
 AI enables machine functionality that can be interpreted as human intelligence. In practice this is the ability to infer predictions based on data collected from previous experiences. Machine learning, a subset of AI, is currently enjoying a renascence from its dormant state since the mid-90s thanks to new GPU-driven software techniques. 
