@@ -1,15 +1,15 @@
 # ServerlessAI
 
 ## Run machine learning inference serverless with AWS Lambda and SageMaker 
-This workshop demonstrates two methods of machine learning inference for globally-scalable production using AWS Lambda and Amazon SageMaker. **[Scikit-learn](https://scikit-learn.org)** is a popular machine learning library that covers most aspects of shallow learning. With these techniques the library module and your custom inference code can be combined into a flexible package for instantaneous cloud deployment. 
+This workshop demonstrates two methods of machine learning inference for globally-scalable production using AWS Lambda and Amazon SageMaker. **[Scikit-learn](https://scikit-learn.org)** is a popular machine learning library that covers most aspects of shallow learning. With these techniques the library module and your custom inference code can be combined into a flexible package for immediate cloud deployment. 
 
-Scikit-learn is vast and deep. It's an essential tool for every data scientist's workbench. However, it can't do everything. Importantly, it can't call inference on deep learning models, importantly those created with MXNet, TensorFlow, or pytorch. **Amazon SageMaker** is ideally suited to build and deploy models with those frameworks. The SageMaker feature **batch-transform** is demonstrated calling inference in the cloud on-demand. As such it can handle nearly every inference workload without the need for a costly persistent endpoint. 
+Scikit-learn is vast and deep. It's an essential tool for every data scientist's workbench. However, it can't do everything. Importantly, it can't call inference on deep learning models, especially those created with MXNet, TensorFlow, or pytorch. **Amazon SageMaker** is ideally suited to build and deploy models with those frameworks. The SageMaker feature **batch-transform** is demonstrated calling inference in the cloud on-demand. As such it can handle nearly every inference workload without the need for a costly persistent endpoint. 
 
 ### What is AI? 
 AI enables machine functionality that can be interpreted as human intelligence. In practice this is the ability to infer predictions based on data collected from previous experiences. Machine learning, a subset of AI, is currently enjoying a renascence from its dormant state since the mid-90s thanks to new GPU-driven software techniques. 
 
-### What is Serverless
-Serverless computing enables you to build & run applications without thinking about servers and other network infrastructure. Relieving a developer from the burden of bootstraping, configuring, networking, clustering, updating, and all aspects of physical server management enables focus on the tasks at hand without sacrificing global access and scalability. In most cases serverless computing dramatically reduces the cost of application workloads. Benefits include:
+### What is Serverless?
+Serverless computing enables you to build & run applications without thinking about servers and other network infrastructure. Relieving a developer from the burden of bootstraping, configuring, networking, clustering, updating, and all aspects of physical server management is an enormous benefit. It enables one to focus on the tasks at hand without sacrificing global access and scalability. In most cases serverless computing dramatically reduces the cost of application workloads. Benefits include:
 
 ### A Fully Managed Service
 - Provides fully managed services that do not require provisioning, 
