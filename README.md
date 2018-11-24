@@ -1,6 +1,6 @@
 # ServerlessAI
 
-## Run machine learning inference serverless with AWS Lambda and SageMaker 
+## Serverless machine learning inference with AWS Lambda and SageMaker 
 This workshop demonstrates two methods of machine learning inference for globally-scalable production using AWS Lambda and Amazon SageMaker. **[Scikit-learn](https://scikit-learn.org)** is a popular machine learning library that covers most aspects of shallow learning. With these techniques the library module and your custom inference code can be combined into a flexible package for immediate cloud deployment. 
 
 Scikit-learn is vast and deep. It's an essential tool for every data scientist's workbench. However, it can't do everything. Importantly, it can't call inference on deep learning models, especially those created with MXNet, TensorFlow, or pytorch. **Amazon SageMaker** is ideally suited to build and deploy models with those frameworks. The SageMaker feature **batch-transform** is demonstrated calling inference in the cloud on-demand. As such it can handle nearly every inference workload without the need for a costly persistent endpoint. 
