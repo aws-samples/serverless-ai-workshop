@@ -36,7 +36,7 @@ def lambda_handler(event, context):
 	)
 	
 	features = vectorizer.transform(
-		TEST_TWEET
+		[TEST_TWEET]
 	)
 	features_nd = features_test.toarray() 
 	
