@@ -76,7 +76,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 1. Setup IAM roles and attach policies
 
-	We need to add rights to our newly-created SageMaker role and create a new role for serverless inference.  We'll be using 3 policies, ```LambdaFullAccess```, ```SageMakerFullAccess```, and ```S3FullAccess```. These permissions are required in the notebook as we will be uploading objects to S3 and creating Lambda functions. *Note: These are highly permissive settings which are suitable for this workshop, however, far too broad for commercial production.*
+	We need to add rights to our newly-created SageMaker role and create a new role for serverless inference.  We'll be using 3 policies, ```LambdaFullAccess```, and ```S3FullAccess```. These permissions are required in the notebook as we will be uploading objects to S3 and creating Lambda functions. *Note: These are highly permissive settings which are suitable for this workshop, however, far too broad for commercial production.*
 
  	![SageMaker IAM](images/sagemaker-iam.jpg)
 	
@@ -144,7 +144,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 
 	```
-	aws lambda create-function --role  <arn from IAM Console> --code S3Bucket="<your-bucket-name>",S3Key="ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip"  --function-name SentimentAnalysis_Sklearn --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 512 --timeout 60 --environment Variables={JOBLIB_MULTIPROCESSING=0}
+	aws lambda create-function --role <arn from IAM Console> --code S3Bucket="<your-bucket-name>",S3Key="ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip"  --function-name SentimentAnalysis_Sklearn --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 512 --timeout 60 --environment Variables={JOBLIB_MULTIPROCESSING=0}
 	```
 	If you need to update the code, use the following command:
 	
@@ -168,7 +168,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 You've successfully created a model using scikit-learn, built a Lambda deployment package, installed the package, and run the function on demand interactively from the console. This model is now available for use at scale. You may choose to call the function from API Gateway to put it into production. That's an exercise for outside of this workshop. 
 
 ## Next Steps
-In this first step we tested the accuracy of our model. Next, you'll want to send single tweets to determine their sentiment individually. We've provided. 
+In this first step we tested the accuracy of our model. Next, you'll want to send single tweets to determine their sentiment individually. We've provided code for Lambda function under the ```Lambda_takes_single_tweet``` folder. 
 
 ## Cleanup
 After you have completed the workshop you can delete all of the resources that were created in the following order.
