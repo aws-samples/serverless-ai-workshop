@@ -45,13 +45,13 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 1. Create a Lambda function using the deployment package stored in your S3 bucket. You can reuse the role you created in Lab 1: Lambda_ServerlessWorkshop_Role.
  
 	```
-	aws lambda create-function --role <arn from IAM Console> --code S3Bucket=<your-bucket-name>,S3Key="ServerlessAIWorkshop/BatchTransform/ServerlessAI_BatchTransform.zip"  --function-name ServerlessAI_BatchTransform --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 128 --timeout 300 
+	aws lambda create-function --role <arn from IAM Console> --code S3Bucket=<your-bucket-name>,S3Key="ServerlessAIWorkshop/BatchTransform/ServerlessAI_BatchTransform.zip"  --function-name ServerlessAI_BatchTransform --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 128 --timeout 900 
 	```
 
 	If you need to update the code, use the following command:
 	
 	```
-	aws lambda update-function-code --role <arn from IAM Console> --code S3Bucket=<your-bucket-name>,S3Key="ServerlessAIWorkshop/BatchTransform/ServerlessAI_BatchTransform.zip" --function-name ServerlessAI_BatchTransform --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 128 --timeout 300
+	aws lambda update-function-code --role <arn from IAM Console> --code S3Bucket=<your-bucket-name>,S3Key="ServerlessAIWorkshop/BatchTransform/ServerlessAI_BatchTransform.zip" --function-name ServerlessAI_BatchTransform --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 128 --timeout 900
 	```
 
 	Close the terminal window.
@@ -63,8 +63,8 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 	```
 	{
-	  "bucket_name": "<your-bucket-name>",
-	  "model_name": "<your-model-name>" 
+	  "bucket": "<your-bucket-name>",
+	  "model": "<your-model-name>" 
 	}
 	```
 

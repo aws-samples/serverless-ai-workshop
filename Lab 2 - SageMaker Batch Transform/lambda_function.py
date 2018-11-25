@@ -20,7 +20,6 @@ def lambda_handler(event, context):
 	DATADIR = 'batch-transform/mnist-1000-samples'
 	OUTPUT = 'ServerlessAIWorkshop/BatchTransform/output'
 
-	input_key = 'kmeans_batch_example/input/valid-data.csv'
 	input_location = 's3://{}/{}'.format(INPUT_BUCKET, DATADIR)
 	output_location = 's3://{}/{}'.format(BUCKET, OUTPUT)
 
@@ -29,7 +28,7 @@ def lambda_handler(event, context):
 		base_transform_job_name='Serverless-Workshop',
 		model_name=MODEL,
 		instance_count=4,
-		instance_type='ml.c5.18xlarge',
+		instance_type='ml.c5.4xlarge',
 		output_path=output_location
 		)
 	
