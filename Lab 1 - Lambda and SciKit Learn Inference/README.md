@@ -162,13 +162,14 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	```
 	
 	![Lambda Test Event](images/lambda-test-event.jpg)
+	
+	After you press ```Test``` button, you will see the below result.
+	
+	![Lambda Test Outcome](images/outcome.jpg)
 
 ## Congratulations!
 
 You've successfully created a model using scikit-learn, built a Lambda deployment package, installed the package, and run the function on demand interactively from the console. This model is now available for use at scale. You may choose to call the function from API Gateway to put it into production. That's an exercise for outside of this workshop. 
-
-## Next Steps
-In this first step we tested the accuracy of our model. Next, you'll want to send single tweets to determine their sentiment individually. We've provided code for Lambda function under the ```Lambda_takes_single_tweet``` folder. 
 
 ## Cleanup
 After you have completed the workshop you can delete all of the resources that were created in the following order.
