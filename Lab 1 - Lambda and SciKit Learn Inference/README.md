@@ -163,7 +163,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	
 	![Lambda Test Event](images/lambda-test-event.jpg)
 	
-	After you press ```Test``` button, you will see the below result.
+	After you press ```Test``` button, wait for a couple of seconds. You will see the result like following.
 	
 	![Lambda Test Outcome](images/outcome.jpg)
 
