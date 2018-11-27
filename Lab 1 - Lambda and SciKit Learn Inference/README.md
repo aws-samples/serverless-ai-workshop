@@ -174,6 +174,10 @@ You've successfully created a model using scikit-learn, built a Lambda deploymen
 ## Cleanup
 After you have completed the workshop you can delete all of the resources that were created in the following order.
 
+## Next Steps
+In this first step we tested the accuracy of our model. Next, you'll want to send single tweets to determine their sentiment individually. We've provided. 
+In this first step we tested the accuracy of our model. Next, you'll want to send single tweets to determine their sentiment individually. We've provided code for Lambda function under the ```Lambda_Single_Tweet``` folder. 
+
 1. Stop the SageMaker notebook instance.
 
 That's it for scikit-learn. Next we'll learn how to overcome Lambda's constraints by using SageMaker's Batch Transform feature.
