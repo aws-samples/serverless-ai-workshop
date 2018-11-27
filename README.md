@@ -3,7 +3,7 @@
 ## Serverless machine learning inference with AWS Lambda and SageMaker 
 This workshop demonstrates two methods of machine learning inference for globally-scalable production using AWS Lambda and Amazon SageMaker. **[Scikit-learn](https://scikit-learn.org)** is a popular machine learning library that covers most aspects of shallow learning. With these techniques the library module and your custom inference code can be combined into a flexible package for immediate cloud deployment. 
 
-Scikit-learn is vast and deep. It's an essential tool for every data scientist's workbench. However, it can't do everything. Importantly, it can't call inference on deep learning models, especially those created with MXNet, TensorFlow, or pytorch. **Amazon SageMaker** is ideally suited to build and deploy models with those frameworks. The SageMaker feature **batch-transform** is demonstrated calling inference in the cloud on-demand. As such it can handle nearly every inference workload without the need for a costly persistent endpoint. 
+Scikit-learn is vast and deep. It's an essential tool for every data scientist's workbench. However, it can't do everything. Importantly, it can't call inference on deep learning models, especially those created with MXNet, TensorFlow, or pytorch. **[Amazon SageMaker](https://aws.amazon.com/sagemaker/)** is ideally suited to build and deploy models with those frameworks. The SageMaker feature **batch-transform** is demonstrated calling inference in the cloud on-demand. As such it can handle nearly every inference workload without the need for a costly persistent endpoint. 
 
 ### What is AI? 
 AI enables machine functionality that can be interpreted as human intelligence. In practice this is the ability to infer predictions based on data collected from previous experiences. Machine learning, a subset of AI, is currently enjoying a renascence from its dormant state since the mid-90s thanks to new GPU-driven software techniques. 
@@ -33,4 +33,6 @@ Though the capacity for SageMaker is limitless there is a cost when using Batch 
 
 
 ## Workshop
-We recommend you start with Lambda and SciKit Learn Inference and complete the workshop until you have successful results. Then, provide new test data to explore the robustness of your model. When you're satisfied with your ability to deploy scikit-learn move on to SageMaker Batch Transform. Here the possibilities are endless. 
+We recommend you start with [Lambda and SciKit Learn Inference](https://github.com/aws-samples/serverless-ai-workshop/tree/master/Lab%201%20-%20Lambda%20and%20SciKit%20Learn%20Inference) and complete the workshop until you have successful results. Then, provide new test data to explore the robustness of your model. When you're satisfied with your ability to deploy scikit-learn move on to [SageMaker Batch Transform](https://github.com/aws-samples/serverless-ai-workshop/tree/master/Lab%202%20-%20SageMaker%20Batch%20Transform). Here the possibilities open up with access to deep learning frameworks and limitless compute resources. 
+
+If any notebook entry is unclear please ask for help either in the workshop or at http://bit.ly/serverlessAI.

@@ -15,11 +15,15 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 ## Steps
 1. Create a SageMaker lifecycle configuration  
 
-	Login to the AWS Console and navigate to SageMaker. You can find SageMaker in the Machine Learning section or using the search box at the top of the console. The SageMaker Dashboard contains links to all major components: Notebook, Training, and Inference. Second on the Notebook list is "Lifecycle configurations". Click on that link.
+	Login to the AWS Console and navigate to [SageMaker](https://console.aws.amazon.com/sagemaker/). You can find SageMaker in the Machine Learning section or using the search box at the top of the console. The SageMaker Dashboard contains links to all major components: Notebook, Training, and Inference. Second on the Notebook list is "Lifecycle configurations". Click on that link.
 	
 	Lifecycle configurations are startup scripts that initialize your Jupyter notebook environments. They can be run once on creation or on every notebook startup. 
 
-	Click on the orange button labelled "Create Configuration". Under "Scripts" click on "Create notebook". Name the lifecycle configuration ```serverless-ai-workshop-lc```. In the *Scripts* section click on **Create notebook**. Place your cursor on the line under the initial bash commands and paste the following: 
+	Click on the orange button labelled "Create Configuration". 
+	
+	Under "Scripts" click on "Create notebook". 
+	
+	Name the lifecycle configuration ```serverless-ai-workshop-lc```. In the *Scripts* section click on **Create notebook**. Place your cursor on the line under the initial bash commands and paste the following: 
 
 	```
 	cd SageMaker
@@ -51,9 +55,9 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 	- Download the code and necessary files from the workshop GitHub repo.
 	- Organize the folder structure and place files in session folders.
 	- Set write permission to the folders
-	- Install 7 zip which is required to compress frameworks to their smallest size
+	- Install 7-Zip which is required to compress lambda packages to their smallest size
 
-1. Click on *Notebook instances*. Create a notebook instance from SageMaker console, using the lifecycle configuration created in the previous step
+1. Click on "Notebook instances". Click on "Create notebook instance" to create a Jupyter notebook using the lifecycle configuration created in the previous step.
 
 	![Notebook Instance](images/notebook-instance.jpg)
 	
@@ -70,7 +74,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 	It takes about 3 minutes for a SageMaker notebook instance to provision. During this time you'll see the status *Pending*. 
 
-1. Navigate to S3 on the AWS Console. While we're waiting for the notebook to be provisioned, let's create an S3 bucket with a globally-unique name, such as: ```serverless-ai-yourname```. Take care to choose the same region for your bucket as your SageMaker notebook. For this workshop we're using Oregon: ```us-west-2```. 
+1. Navigate to [S3](https://console.aws.amazon.com/s3) on the AWS Console. While we're waiting for the notebook to be provisioned, let's create an S3 bucket with a globally-unique name, such as: ```serverless-ai-yourname```. Take care to choose the same region for your bucket as your SageMaker notebook. For this workshop we're using Oregon: ```us-west-2```. 
 
 	This bucket is necessary to store the training data and models you're creating in this workshop. Take note of the region. SageMaker must be run in the same region as your newly created S3 bucket. If for any reason you choose an alternate region simply ensure that SageMaker runs in the same region as your newly created bucket.
 
@@ -102,12 +106,12 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 1. By now the
  notebook instance is ready, open the instance by clicking "Open Jupyter". Take moment to browse the folder structures created.
 
-1. Go to the **ServerlessAI-Workshop/Lab 1 - Lambda and SciKit Learn Inference** folder and open the notebook called, **Scikit-Learn-Sentiment-Analysis-Tweet.ipynb**. Take a moment to read the instructions and examine the code before proceeding to the next steps. If any cell is unclear please ask for help either in the workshop or at http://bit.ly/serverlessAI
+1. Go to the **ServerlessAI-Workshop/Lab 1 - Lambda and SciKit Learn Inference** folder and open the notebook called, **Scikit-Learn-Sentiment-Analysis-Tweet.ipynb**. Take a moment to read the instructions and examine the code before proceeding to the next steps. If any cell is unclear please ask for help either in the workshop or at http://bit.ly/serverlessAI.
 	
 	![Notebook Instance3](images/notebook-instance3.jpg)
 		
 1. In the notebook, do the following:
-	- Replace ```<your-bucket-name>``` with the bucket name you created in the previous step.
+	- Replace ```your-bucket-name``` with the bucket name you created in the previous step.
 	- Step through each cell and execute them. It will train the scikit-learn's built-in algorithm, logistic regression using tweets dataset. 
 	- At the end of the notebook, there are lines of code to upload the trained model and validation/test data to the S3 bucket that you created in the previous step. 
 	- Navigate back to the tab with your Jupyter notebook file browser. 
@@ -122,16 +126,16 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 1. Create the Lambda deployment package on the notebook instance from terminal executing the following commands:
 	```
 	cd SageMaker/ServerlessAI-Workshop/Lab\ 1\ -\ Lambda\ and\ SciKit\ Learn\ Inference/LambdaPackage/
-	pip install --upgrade pip
 	pip install mock PyHamcrest
+	pip install --upgrade pip
 	pip install --ignore-installed --target=. sklearn
 	find . -name "*.so" | xargs strip
 	7z a -mm=Deflate -mfb=258 -mpass=15 -r ../SentimentAnalysis_Sklearn.zip *
 	```
-1. Upload the deployment package to your S3 bucket. Replace ```<your-bucket-name>``` with your S3 bucket name. *Note that we're using the Oregon region in this workshop.*
+1. Upload the deployment package to your S3 bucket. Replace ```your-bucket-name``` with your S3 bucket name. *Note that we're using the Oregon region in this workshop.*
 
 	```
-	aws s3api put-object --bucket <your-bucket-name> --key ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip --body ../SentimentAnalysis_Sklearn.zip --region us-west-2
+	aws s3api put-object --bucket your-bucket-name --key ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip --body ../SentimentAnalysis_Sklearn.zip --region us-west-2
 	```
 
 	*Tip: Use control-a to quickly move your cursor to the beginning of the line.*
@@ -144,12 +148,12 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 
 	```
-	aws lambda create-function --role <arn from IAM Console> --code S3Bucket="<your-bucket-name>",S3Key="ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip"  --function-name SentimentAnalysis_Sklearn --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 512 --timeout 60 --environment Variables={JOBLIB_MULTIPROCESSING=0}
+	aws lambda create-function --role <arn from IAM Console> --code S3Bucket="your-bucket-name,S3Key="ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip"  --function-name SentimentAnalysis_Sklearn --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 512 --timeout 60 --environment Variables={JOBLIB_MULTIPROCESSING=0}
 	```
 	If you need to update the code, use the following command:
 	
 	```
-	aws lambda update-function-code --function-name SentimentAnalysis_Sklearn --s3-bucket <your-bucket-name> --s3-key ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip
+	aws lambda update-function-code --function-name SentimentAnalysis_Sklearn --s3-bucket your-bucket-name --s3-key ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip
 	```
 1. On the Lambda console, create a test event with the following JSON. 
 
@@ -157,7 +161,8 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 	```
 	{
-	  "bucket_name": "<your-bucket-name>" 
+	  "bucket_name": "your-bucket-name",
+	  "test_tweet": "Put your own phrase here." 
 	}
 	```
 	
@@ -173,10 +178,6 @@ You've successfully created a model using scikit-learn, built a Lambda deploymen
 
 ## Cleanup
 After you have completed the workshop you can delete all of the resources that were created in the following order.
-
-## Next Steps
-In this first step we tested the accuracy of our model. Next, you'll want to send single tweets to determine their sentiment individually. We've provided. 
-In this first step we tested the accuracy of our model. Next, you'll want to send single tweets to determine their sentiment individually. We've provided code for Lambda function under the ```Lambda_Single_Tweet``` folder. 
 
 1. Stop the SageMaker notebook instance.
 

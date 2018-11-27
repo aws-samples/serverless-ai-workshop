@@ -1,4 +1,4 @@
 {
-    "bucket_name": "gps-serverless-workshop",
-    "test_tweet": "I am in love, I'm lovesick"
+    "bucket_name": "your-bucket-name",
+    "test_tweet": "Put your own phrase here." 
 }

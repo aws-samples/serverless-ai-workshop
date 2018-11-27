@@ -15,7 +15,7 @@ def lambda_handler (event, context):
 	BUCKET_NAME = data['bucket_name']
 	DATADIR='ServerlessAIWorkshop/SentimentAnalysis'
 	MODEL_FILE = 'sentiment_analysis_model.pkl'
-	VOCAB_FILE = 'tweet_vocabulary.pkl'
+	VOCAB_FILE = 'vocabulary.pkl'
 	MODEL_FILE_KEY = DATADIR + '/' + MODEL_FILE
 	VOCAB_FILE_KEY = DATADIR + '/' + VOCAB_FILE
 	LOCAL_MODEL_FILE = '/tmp/' +  MODEL_FILE
