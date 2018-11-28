@@ -148,7 +148,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 
 	```
-	aws lambda create-function --role <arn from IAM Console> --code S3Bucket="your-bucket-name,S3Key="ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip"  --function-name SentimentAnalysis_Sklearn --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 512 --timeout 60 --environment Variables={JOBLIB_MULTIPROCESSING=0}
+	aws lambda create-function --role <arn from IAM Console> --code S3Bucket=your-bucket-name,S3Key="ServerlessAIWorkshop/SentimentAnalysis/SentimentAnalysis_Sklearn.zip"  --function-name SentimentAnalysis_Sklearn --runtime python3.6 --handler lambda_function.lambda_handler --memory-size 512 --timeout 60 --environment Variables={JOBLIB_MULTIPROCESSING=0}
 	```
 	If you need to update the code, use the following command:
 	
