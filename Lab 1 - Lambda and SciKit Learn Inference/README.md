@@ -96,7 +96,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 
 	- Navigate to IAM in the AWS Console. From the left navigation click on "Roles". Click on "Create Role".
 	- From the list of AWS Services choose: Lambda. Click on Next:Permissions.
-	- Use the search box to add ```S3FullAccess```, and ```AmazonSageMakerFullAccess``` individually. You do this by searching, clicking on the on the checkbox, searching again, and selecting the next policy. Note that this is a highly permissive configuration that should not be used in production. It is only intended to facilitate learning in this workshop. 
+	- Use the search box to add ```LambdaFullAccess```, ```S3FullAccess```, and ```AmazonSageMakerFullAccess``` individually. You do this by searching, clicking on the on the checkbox, searching again, and selecting the next policy. Note that this is a highly permissive configuration that should not be used in production. It is only intended to facilitate learning in this workshop. 
 	- After you have added all 3 policies click on Next:Tags, and then Next:Review.
 	- For Role Name use Lambda_ServerlessWorkshop_Role.
 	- Click on Create role.
