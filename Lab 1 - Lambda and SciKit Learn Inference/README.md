@@ -177,8 +177,12 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
 You've successfully created a model using scikit-learn, built a Lambda deployment package, installed the package, and run the function on demand interactively from the console. This model is now available for use at scale. You may choose to call the function from API Gateway to put it into production. That's an exercise for outside of this workshop. 
 
 ## Cleanup
-After you have completed the workshop you can delete all of the resources that were created in the following order.
+If you're moving on to Lab 2 there's no need to cleanup. We'll be using the same SageMaker instance and s3 buckets. Try Lab 2 to learn how to overcome Lambda's constraints by using SageMaker's Batch Transform feature.
+
+If you're done here you can delete all of the resources that were created in the following order.
 
 1. Stop the SageMaker notebook instance.
+1. Delete the SageMaker notebook instance.
+1. Delete all contents of the s3 bucket.
+1. Remove the s3 bucket.
 
-That's it for scikit-learn. Next we'll learn how to overcome Lambda's constraints by using SageMaker's Batch Transform feature.
