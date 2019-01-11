@@ -133,7 +133,6 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
     pipenv --python 3.6
     pipenv install mock PyHamcrest
     pipenv install sklearn
-    find . -name "*.so" | xargs strip
     ls $VIRTUAL_ENV
     PY_DIR='build/python/lib/python3.6/site-packages'
     mkdir -p $PY_DIR
