@@ -133,6 +133,7 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
     pipenv --python 3.6
     pipenv install mock PyHamcrest
     pipenv install sklearn
+    pipenv install joblib
     ls $VIRTUAL_ENV
     PY_DIR='build/python/lib/python3.6/site-packages'
     mkdir -p $PY_DIR
@@ -140,6 +141,8 @@ We recommend you use the latest version of Firefox or Chrome to complete this wo
     pip install -r requirements.txt --no-deps -t $PY_DIR
     cd build/
     find . -name "*.so" | xargs strip
+    find . -type d -name "tests" -exec rm -rfv {} +
+    find . -type d -name "__pycache__" -exec rm -rfv {} +
     7z a -mm=Deflate -mfb=258 -mpass=15 -r ../SentimentAnalysis_Layers.zip *
     cd ..
     rm -r build/
