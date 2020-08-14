@@ -2,7 +2,7 @@ import json
 import boto3
 import warnings
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.externals import joblib
+import joblib
 
 warnings.filterwarnings(action='ignore', category=Warning) 
 s3 = boto3.resource('s3')
